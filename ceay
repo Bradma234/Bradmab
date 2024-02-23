@@ -1,0 +1,35 @@
+using UnityEngine;
+
+public class FlappyBird : MonoBehaviour
+{
+    public float jumpForce = 5.0f;
+    private Rigidbody2D rb;
+    private bool isDead = false;
+
+    void Start()
+    {
+        // Ottieni il componente Rigidbody2D dell'oggetto
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        // Controlla se il giocatore preme il tasto o tocca lo schermo
+        if (Input.GetButtonDown("Jump") && !isDead)
+        {
+            // Applica una forza verso l'alto al Rigidbody2D per far saltare l'uccello
+            rb.velocity = Vector2.up * jumpForce;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Gestisce la collisione con oggetti, ad esempio i tubi
+        if (collision.gameObject.CompareTag("Tube"))
+        {
+            // Imposta lo stato di morte e mostra un messaggio di game over
+            isDead = true;
+            Debug.Log("Game Over!");
+        }
+    }
+}
