@@ -4,13 +4,7 @@ public class FlappyBird : MonoBehaviour
 {
     public float jumpForce = 5.0f;
     private Rigidbody2D rb;
-    private bool isDead = false;
-
-    void Start()
-    {
-        // Ottieni il componente Rigidbody2D dell'oggetto
-        rb = GetComponent<Rigidbody2D>();
-    }
+    pr
 
     void Update()
     {
