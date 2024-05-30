@@ -6,12 +6,16 @@ public class FlappyBird : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Gestisce la collisione con oggetti, ad esempioid OnCollisionEnter2D(Collision2D collision)
+    {
         // Gestisce la collisione con oggetti, ad esempio i tubi
         if (collision.gameObject.CompareTag("Tube"))
         {
             // Imposta lo stato di morte e mostra un messaggio di game over
             isDead = true;
             Debug.Log("Game Over!");
-        }
+        }oid OnCollisionEnter2D(Collision2D collision)
+    {
+        // Gestisce la collisione con oggetti, ad esempi
     }
 }
